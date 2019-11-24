@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Air Travel Form</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto Mono" rel="stylesheet">
+	<!--<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />-->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	 <link rel="icon" type="image/ico" href="/home/parshva/Desktop/dbms_pro/front_end/forms/air/img/logo.jpg" />
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+<nav class="navbar navbar-inverse">
+
+  <div class="container-fluid">
+  
+    <div class="navbar-header">
+	
+      <a class="navbar-brand" href="#">
+      
+      World Wide Travel</a>
+    </div>
+   
+    <ul class="nav navbar-nav">
+      <li><a href="#">Train Booking</a></li>
+     <li class="active"><a href="#">Air Booking</a></li>
+      <li><a href="#">Hotel Booking</a></li>
+	<li><a href="#">Bus Booking</a></li>
+        <li><a href="#">Package Booking</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#""><span class="glyphicon glyphicon-home"></span></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-globe"></span></a></li>
+<li><a href="#"><span class="glyphicon glyphicon-usd"></span></a></li>
+    </ul>
+  </div>
+</nav>
+</head>
+<script>
+
+
+
+function clearText()
+{
+    document.getElementById('ip1').value = "";
+    document.getElementById('ip2').value = "";
+    document.getElementById('ip3').value = "";
+    document.getElementById('ip4').value = "";
+    document.getElementById('ip5').value = "";
+    document.getElementById('ip6').value = "";
+    document.getElementById('ip7').value = "";
+}
+</script>
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<form>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group" >
+										<span class="form-label">Source</span>
+										<input class="form-control" id="ip1" type="text" name="source" placeholder="Enter City" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Destination</span>
+										<input class="form-control" id="ip2" type="text" name="destination" placeholder="Enter City" required>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Name</span>
+										<input class="form-control" id="ip3" type="text" name="name" placeholder="Enter Name" required>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Departing</span>
+										<input class="form-control" type="date" id="ip4" name="date" required>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<span class="form-label">Passengers</span>
+										<select class="form-control" id="ip5" required>
+											<option name="passengers" value="1">1</option>
+											<option name="passengers" value="2">2</option>
+											<option name="passengers" value="3">3</option>
+											<option name="passengers" value="4">4</option>
+											<option name="passengers" value="5">5</option>		
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								
+							
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Travel class</span>
+										<select class="form-control" id="ip6" required> 
+											<option>Economy class</option>
+											<option  >Business class</option>
+											<option>First class</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-md-3">
+								<div class="form-group">
+										<span class="form-label" style="margin-left:20px;">Airline</span>
+										<select class="form-control" style="margin-left:14px;" id="ip7" required> 
+											<option name="airline" value="Indigo">Indigo</option>
+								
+											<option name="airline" value="Spice Jet">Spice Jet</option>
+											<option name="airline" value="Kingfisher">Kingfisher</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-btn">
+										<button class="submit-btn" style="margin">Submit</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-btn">
+										<button class="submit-btn" onclick="clearText();">Reset</button>
+									</div>
+								</div>		
+							</div>
+						</form>
+ <ul class="pagination" style="margin-left:500px;padding-bottom:-80px;">
+  <li><a href="#">1</a></li>
+  <li class="active"><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+
+</ul> 
+				</div>
+			</div>
+		</div>
+	</div>
+							
+					</div>
+ 
+</body>
+
+</html>

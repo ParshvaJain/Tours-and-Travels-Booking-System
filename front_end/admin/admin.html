@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Admin Page</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto Mono" rel="stylesheet">
+	<!--<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />-->
+	<!--<link type="text/css" rel="stylesheet" href="css/style.css" />-->
+	 <link rel="icon" type="image/ico" href="/home/parshva/Desktop/dbms_pro/front_end/forms/air/img/logo.jpg" />
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+<nav class="navbar navbar-inverse">
+
+  <div class="container-fluid">
+  
+    <div class="navbar-header">
+	
+      <a class="navbar-brand" href="#">
+      
+      World Wide Travel</a>
+    </div>
+   
+    <ul class="nav navbar-nav">
+      <li><a href="#">Train Booking</a></li>
+     <li><a href="#">Air Booking</a></li>
+      <li><a href="#">Hotel Booking</a></li>
+	<li><a href="#">Bus Booking</a></li>
+        <li><a href="#">Package Booking</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#""><span class="glyphicon glyphicon-home"></span></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-globe"></span></a></li>
+<li class="active"><a href="#"><span>Admin</span></a></li>
+    </ul>
+  </div>
+</nav>
+</head>
+<style>
+.changepassword{
+  width:350px;
+  height:150px;
+  border: 1px black;
+  background:green;
+  margin-top: 70px;
+  margin-left:50px;
+  background-image: url('div.jpg');
+}
+body{
+	background-image: url('back.jpg');
+}
+.updatedetails{
+  width:350px;
+  height:150px;
+  border: 1px black;
+  background: green;
+  margin-left:460px;
+  margin-top: -150px;
+  background-image: url('div.jpg');
+}
+
+.cancelbooking{
+  width:350px;
+  height:200px;
+  border: 1px black;
+  background: ;
+  margin-left:890px;
+  margin-top: -250px;
+  background-image: url('div.jpg');
+}
+
+.addbus{
+  width:350px;
+  height:200px;
+  border: 1px black;
+  background: ;
+  margin-left:870px;
+  margin-top: -150px;
+  background-image: url('div.jpg');	
+}
+
+.text{
+font-size:25px;
+text-align:center;
+color:
+}
+.passf,.custf,.busc,.busu,.custtf,.airf,.hotelf,.cancelf{
+width:350px;
+height:210px;
+border:2px black;
+background:white;
+margin-top: -41px;
+}
+#form1{
+padding-left:15px;
+
+}
+#passu,#airu,#hotelu,#cancelu{
+	margin-left: 140px;
+
+}
+#custu,#custt{
+	margin-left: 140px;
+}
+
+#updatebut1{
+	margin-left: 140px;
+}
+
+#upadtebut2{
+	margin-left: 90px;
+}
+
+.addbus{
+	width:350px;
+	height:150px;
+  	border: 1px green;
+  	background-color: green;
+}
+.addtrain{
+  width:350px;
+  height:150px;
+  border: 1px black;
+  background: green;
+  margin-left:50px;
+  margin-top: 250px;
+  background-image: url('div.jpg');
+}
+
+.addhotel{
+	  width:350px;
+  height:150px;
+  border: 1px black;
+  background: green;
+  margin-left:870px;
+  margin-top: -150px;
+  background-image: url('div.jpg');
+}
+
+.cancelbooking{
+	  width:350px;
+  height:150px;
+  border: 1px black;
+  background: green;
+  margin-left:460px;
+  margin-top: 250px;
+  background-image: url('div.jpg');
+
+}
+.addair{
+width:350px;
+  height:150px;
+  border: 1px black;
+  background: green;
+  margin-left:460px;
+  margin-top: -150px;
+  background-image: url('div.jpg');
+
+}
+
+.main{
+  width:1000px;
+  height:100px;
+  border: 1px black;
+  background:green;
+   background-image: url('div.jpg');
+   margin-bottom:-5px;
+   margin-left:150px;
+}
+</style>
+<script>
+  
+
+$(document).ready(function(){
+
+
+          $(".passf").hide();
+          $(".cancelf").hide();
+          $(".custf").hide();
+          $(".busc").hide();
+          $(".busu").hide();
+          $(".custtf").hide();
+          $(".airf").hide();
+          $(".hotelf").hide();
+
+$('#passu').click(function() {
+    $('.passf').toggle();
+});
+
+$('#cancelu').click(function() {
+ $('.cancelf').toggle();
+});
+$('#custu').click(function() {
+    $('.custf').toggle();
+});
+
+$('#updatebut1').click(function() {
+    $('.busc').toggle();
+});
+
+$('#updatebut2').click(function() {
+    $('.busu').toggle();
+});
+
+$('#custt').click(function() {
+    $('.custtf').toggle();
+});
+$('#airu').click(function() {
+    $('.airf').toggle();
+});
+
+$('#hotelu').click(function() {
+    $('.hotelf').toggle();
+});
+
+});
+
+</script>
+<body>
+<div class="main">
+</div>
+	<div class="maindiv">
+	
+		<div class="changepassword">
+			<div class="text" style="padding-top:50px">Change password</div>
+			<br>
+			<button id="passu">Update</button>
+			<br>
+			<br><br><br>
+			<div class="passf"> 
+			<form id="form1" method="post">
+				<br>
+				Agent ID <span style="padding-left:42px;"> <input type="text" name="agentid" placeholder="Enter ID"></span>
+				<br>
+				<br>
+				Old Password <span style="padding-left:10px"> <input type="password" name="oldpassword" placeholder="Type old password"></span>
+				<br>
+				<br>
+		New Password <span style="padding-left:5px">  <input type="password" name="newpassword" placeholder="Type new password"></span>
+				<br>
+				<br>
+				<span style="padding-left:100px"><button type="submit" name="changepassword">Update</button></span>
+			</form>
+			</div>
+		</div>
+		
+		<div class="updatedetails">
+		<div class="text" style="padding-top:50px">Update Customer Details</div>
+			<br>
+			<button id="custu">Update</button>
+			<br>
+			<br><br><br>
+			<div class="custf"> 
+			<form method="post">
+				<br>
+				  Customer-ID <span style="padding-left:10px;"> <input type="text" name="customerid" placeholder="Enter ID"></span>
+				<br>
+				<br>
+				Name <span style="padding-left:52px">  <input type="text" name="custname" placeholder="Type Your Name"></span>
+				<br>
+				<br>
+				Phone-No <span style="padding-left:25px">   <input type="text" name="phoneno" placeholder="Type number"></span>
+				<br>
+				<br>
+				<span style="padding-left:135px"><button type="submit" name="updatecustomerdetails">Update</button></span>
+			</form>
+			</div>
+		</div>
+		
+		<div class="addbus">
+		<div class="text" style="padding-top:50px">Bus Details</div>
+			<br>
+			<button id="updatebut1">Update</button>
+		
+			<br>
+			<br><br><br>
+			<div class="busc"> 
+			<form  method="post">
+				<br>
+				Source<span style="padding-left:30px;"> <input type="text" name="bussource" placeholder="Enter City"></span>
+				<br>
+				<br>
+				Destination <span style="padding-left:5px"> <input type="text" name="busdestination" placeholder="Enter City"></span>
+				<br>
+				<br>
+				Price <span style="padding-left:41px">  <input type="text" name="busprice" placeholder="Enter Price"></span>
+				<br>
+				<br>
+				<span style="padding-left:135px"><button type="submit" name="addbus">Update</button></span>
+			</form>
+			</div>
+			
+		</div>
+		
+		<div class="addtrain">
+		<div class="text" style="padding-top:50px">Train Details</div>
+			<br>
+			<button id="custt">Update</button>
+			<br>
+			<br><br><br>
+			<div class="custtf"> 
+			<form method="post">
+				<br>
+				Source<span style="padding-left:30px;"> <input type="text" name="trainsource" placeholder="Enter ID"></span>
+				<br>
+				<br>
+				Destination <span style="padding-left:5px"> <input type="text" name="traindestination" placeholder="Enter City"></span>
+				<br>
+				<br>
+				Price <span style="padding-left:41px">  <input type="text" name="trainprice" placeholder="Enter City"></span>
+				<br>
+				<br>
+				<span style="padding-left:135px"><button type="submit" name="addtrain">Update</button></span>
+			</form>
+			</div>
+		</div>
+		
+		<div class="addair">
+		<div class="text" style="padding-top:50px">Air Details</div>
+			<br>
+			<button id="airu">Update</button>
+		
+			<br>
+			<br><br><br>
+			<div class="airf"> 
+			<form  method="post">
+				<br>
+				Source<span style="padding-left:30px;"> <input type="text" name="airsource" placeholder="Enter City"></span>
+				<br>
+				<br>
+				Destination <span style="padding-left:5px"> <input type="text" name="airdestination" placeholder="Enter City"></span>
+				<br>
+				<br>
+				Price <span style="padding-left:42px">  <input type="text" name="airprice" placeholder="Enter Price"></span>
+				<br>
+				<br>
+				<span style="padding-left:135px"><button type="submit" name="addair">Update</button></span>
+			</form>
+			</div>
+		</div>
+		
+	
+		<div class="addhotel">
+		<div class="text" style="padding-top:50px">Hotel Details</div>
+			<br>
+			<button id="hotelu">Update</button>
+			<br>
+			<br><br><br>
+			<div class="hotelf"> 
+			<form method="post">
+				<br>
+				Hotel Name<span style="padding-left:12px;"> <input type="text" name="hotelname" placeholder="Enter Name"></span>
+				<br>
+				<br>
+				Location <span style="padding-left:32px"> <input type="text" name="location" placeholder="Enter City"></span>
+				<br>
+				<br>
+				Price<span style="padding-left:52px">  <input type="text" name="hotelprice" placeholder="Enter Price"></span>
+				<br>
+				<br>
+				<span style="padding-left:135px"><button type="submit" name="addhotel">Update</button></span>
+			</form>
+			</div>
+		</div>
+		
+		<div class="cancelbooking">
+		<div class="text" style="padding-top:50px">Cancel Booking</div>
+			<br>
+			<button id="cancelu">Update</button>
+			<br>
+			<br><br><br>
+			<div class="cancelf"> 
+			<form method="post">
+				<br>
+				Customer Name<span style="padding-left:12px;"> <input type="text" name="cancelname" placeholder="Enter Name"></span>
+				<br>
+				<br>
+				Booking ID <span style="padding-left:45px"> <input type="text" name="bookingid" placeholder="Type Booking ID"></span>
+			
+				<br>
+				<br>
+				<span style="padding-left:135px"><button type="submit" name="cancelbooking">Update</button></span>
+			</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
