@@ -1,0 +1,155 @@
+1. How many people have booked through an agent in their own locality?  	+
+2. Within a given date range, how many  bookings hav been completed? 				+
+3. Sort the agents based on no of bookings they've done.			+
+4. Who all prefer travelling by themselves instead of going thru packages?	+
+5. Who all have paid through credit cards for high value bookings?		+
+6. What time of the year is there maximum bookings for packages?		-
+7. Number of customers from each city (group by).				+
+8. List the agents having bookings greater than n (having)			+			
+9. Popular tourist destinations.						+
+10. Commission earned by agents.						+
+11. Who all prefer a long trip in the same city?				-
+12. Cancel a booking. 
+	a. delete from booking table						+
+	b. delete from contains							+
+	c. update payment_status			 			+
+13. Update customer details.							+
+14. Lives in same locality and books a hotel in the same locale 		+
+15. Show all cancelled bookings							+
+16. Display customers who have made high value bookings.			+
+17. Agency and no.of agents							+
+18. Total money earned								+
+19. List of all unique destinations						+
+20. Join									+
+21.How many bookings involve price between 1000 and 2000?
+
+
+Easy Queries (in, between, where):
+1, 4, 12, 13, 14,21
+1. 
+select customer_name, area
+from agency, customer
+where agency.location=customer.area;  
+
+4.
+select customer_name
+from customer as c, booking as b, books_through as bt, contains as con
+where package_id=NULL and con.booking_id=b.booking_id and b.agent_id=bt.agent_id
+and bt.customer_id=c.customer_id
+
+12.
+a)delete from booking where booking_id=
+b)delete from contains where booking_id=
+c)update payment set payment_status=0 where payment_id= 
+
+13.
+update customer set street= , area= , city= , contact= ,where customer_id= ;
+
+14.
+select customer_name
+from customer, hotel
+where area=hotel_location
+
+21.select payment_id,payment_price from payment where payment_price BETWEEN 1000 AND 2000;
+
+
+Mediocre(group by, having, sort):
+3, 7, 10, 17, 18, 19, 20
+3. select agent_name, count(customer.agent_id) 
+from agent, customer 
+where customer.agent_id=agent.agent_id
+group by agent_name 
+order by count(customer.agent_id);
+
+7.
+select city, count(customer_id)
+from customer
+Group by city
+Order by count(customer_id)
+
+10.
+select agent_name, commission
+from agent
+Order by commission
+
+17.
+select location, count(no_of_agents)
+from agency
+having count(no_of_agents)>3
+Order by count(no_of_agents)
+
+18.
+select sum(payment_price)
+from payment 
+where payment_status!=0
+
+19.
+select destination
+from air_travel
+Intersection
+select destination
+from bus_travel
+Intersection
+select destination
+from train_travel
+
+20.
+Select agent.agent_name , agent.commission, agency.location ,agency.phone_no 
+from agent inner join agency on agent.agency_id = agency.agency_id
+
+
+
+Hard(nested):
+2, 5, 8, 9, 11, 15, 16
+2.
+select booking_id, payment_id, booking_date, customer_name
+from contains, customer 
+where customer.customer_id=contains.customer_id and booking_date in 
+(select booking_date from contains 
+where booking_date between #01/01/2019# and #01/06/2019#)
+Order by booking_date;
+
+5.
+select customer_name, payment_price
+from contains, customer, payment
+where contains.customer_id=customer.customer_id and contains.payment_id in 
+(select payment_id from payment 
+where payment_price>25000 and payment_type='credit_card')
+order by payment_price DESC;
+
+8.
+select agent_id, agent_name
+from agent 
+where agent_id in 
+(select agent_id from customer group by agent_id having count(agent_id)>3)
+
+9.
+select destination, count(destination) from
+(select destination
+from air_travel
+Union
+select destination
+from bus_travel
+Union
+select destination
+from train_travel)group by destination
+
+11.
+select customer_name 
+from customer, contains
+customer.customer_id
+(select hotel_id, DATEDIFF(day, from_date, till_date) as diff
+from hotel having diff>6)
+
+15.
+select booking_id 
+from contains, payment_id
+where payment_id in(select payment_id from payment where payment_status=0)
+
+16.
+select customer_name, payment_price
+from contains, customer, payment
+where contains.customer_id=customer.customer_id and contains.payment_id in 
+(select payment_id from payment where payment_price>25000)
+order by payment_price DESC;
+
